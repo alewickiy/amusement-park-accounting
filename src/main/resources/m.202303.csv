@@ -1,0 +1,4 @@
+item_name,is_expense,quantity,unit_price
+Кролики,TRUE,5000,5
+Козы,TRUE,12,15000
+Продажа животных,FALSE,1000,120

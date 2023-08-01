@@ -1,0 +1,4 @@
+item_name,is_expense,quantity,unit_price
+Кефир,TRUE,5000,5
+Ряженка,TRUE,12,15000
+Продажа всего,FALSE,1000,120
