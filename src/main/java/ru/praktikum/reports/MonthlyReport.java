@@ -18,6 +18,7 @@ public class MonthlyReport {
     public MonthlyReport() {
 
     }
+
     private MonthlyReport(int monthNumber,
                           String itemName,
                           boolean isExpense,
@@ -65,12 +66,18 @@ public class MonthlyReport {
             ArrayList<String> line = monthReportsHashMap.get(month);
             for (String s : line) {
                 String[] array = s.split(",");
+
+                String itemName = array[0];
+                boolean isExpense = BooleanDecoder.booleanDecoder(array[1]);
+                int quantity = Integer.parseInt(array[2]);
+                int unitPrice = Integer.parseInt(array[3]);
+
                 monthlyReport = new MonthlyReport(
                         month,
-                        array[0],
-                        BooleanDecoder.booleanDecoder(array[1]),
-                        Integer.parseInt(array[2]),
-                        Integer.parseInt(array[3])
+                        itemName,
+                        isExpense,
+                        quantity,
+                        unitPrice
                 );
                 monthlyReports.add(monthlyReport);
             }

@@ -15,6 +15,7 @@ public class YearlyReport {
 
     public YearlyReport() {
     }
+
     public YearlyReport(int year, int month, int amount, boolean isExpense) {
         this.year = year;
         this.month = month;
@@ -51,11 +52,16 @@ public class YearlyReport {
             ArrayList<String> line = yearReport.get(year);
             for (String s : line) {
                 String[] str = s.split(",");
+
+                int month = Integer.parseInt(str[0]);
+                int amount = Integer.parseInt(str[1]);
+                boolean isExpense = BooleanDecoder.booleanDecoder(str[2]);
+
                 yearlyReport = new YearlyReport(
                         year,
-                        Integer.parseInt(str[0]),
-                        Integer.parseInt(str[1]),
-                        BooleanDecoder.booleanDecoder(str[2])
+                        month,
+                        amount,
+                        isExpense
                 );
                 yearlyReports.add(yearlyReport);
             }
